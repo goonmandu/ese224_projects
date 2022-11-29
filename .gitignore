@@ -24,4 +24,4 @@ a.out
 /.vscode
 
 # CODEOWNERS
-CODEOWNERS
+!CODEOWNERS
