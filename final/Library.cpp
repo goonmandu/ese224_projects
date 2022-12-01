@@ -98,15 +98,16 @@ void Library::update_catalog_with_catjson() {
         };
         catalog.push_back(to_add);
     }
-    print_all_books();
+    // print_all_books();
     std::sort(catalog.begin(), catalog.end(),
               [](Book a, Book b) {
                   return a.id < b.id;
               });
-    print_all_books();
+    // print_all_books();
 }
-void Library::update_catjson_with_catalog() {
 
+void Library::update_catjson_with_catalog() {
+    
 }
 
 void Library::rnljson_to_vector() {
