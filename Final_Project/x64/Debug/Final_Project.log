@@ -1,0 +1,12 @@
+﻿  Library.cpp
+C:\Users\eliza\OneDrive\Desktop\Final_Project\Final_Project\Library.cpp(69,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\eliza\OneDrive\Desktop\Final_Project\Final_Project\Library.cpp(171,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Users\eliza\OneDrive\Desktop\Final_Project\Final_Project\Library.cpp(188,19): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Users\eliza\OneDrive\Desktop\Final_Project\Final_Project\Library.cpp(199,43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\eliza\OneDrive\Desktop\Final_Project\Final_Project\Library.cpp(210,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\eliza\OneDrive\Desktop\Final_Project\Final_Project\Library.cpp(327,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  main.cpp
+  Student.cpp
+  Teacher.cpp
+  Generating Code...
+  Final_Project.vcxproj -> C:\Users\eliza\OneDrive\Desktop\Final_Project\x64\Debug\Final_Project.exe
