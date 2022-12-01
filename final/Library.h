@@ -59,6 +59,8 @@ class Library {
         void increment_likes(int id);
         int reserve_book(std::string username, std::string target_title);
         void print_internal_rnl();
+        void update_catalog_with_catjson();
+        void update_catjson_with_catalog();
 };
 
 template<typename T> auto stllist_iterator_of(T t);

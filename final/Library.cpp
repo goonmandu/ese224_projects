@@ -33,6 +33,7 @@ Library::Library() {
 
     catalog.push_back({ -1, "", "", "", -1, -1 });  // Invalid book in catalog to return pointers as
 
+    // CREDENTIALS IN BEGIN //
     while (!users.eof()) {
         users >> role >> username >> password;
         credentials[username] = {
@@ -41,8 +42,12 @@ Library::Library() {
             {"password", password}
         };
     }
+    // CREDENTIALS IN END //
+
+    // CREDENTIALS OUT START //
     std::ofstream credsout("json/credentials.json");
     credsout << std::setw(4) << credentials << std::endl;
+    // CREDENTIALS OUT END //
 
     while (!books.eof()) {
         books >> isbn >> title >> author >> category >> copies;
@@ -78,6 +83,30 @@ Library::Library() {
     rnlout << std::setw(4) << resandlikes << std::endl;
 
     rnljson_to_vector();
+}
+
+void Library::update_catalog_with_catjson() {
+    catalog.clear();
+    for (auto it = catjson.begin(); it != catjson.end(); ++it) {
+        Book to_add = {
+            it.value()["isbn"],
+            it.value()["title"],
+            it.value()["author"],
+            it.value()["category"],
+            it.value()["id"],
+            it.value()["due_in"]
+        };
+        catalog.push_back(to_add);
+    }
+    print_all_books();
+    std::sort(catalog.begin(), catalog.end(),
+              [](Book a, Book b) {
+                  return a.id < b.id;
+              });
+    print_all_books();
+}
+void Library::update_catjson_with_catalog() {
+
 }
 
 void Library::rnljson_to_vector() {

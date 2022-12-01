@@ -377,6 +377,13 @@ int Teacher::menu(Library &lib) {
             commandchosen = 1;
             lib.print_internal_rnl();
             break;
+        case 'c':
+            end = std::chrono::steady_clock::now();
+            days_passed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() / (1000.0 * SECONDS_PER_DAY);
+            lib.update_day(days_passed);
+            update_day(days_passed);
+            lib.update_catalog_with_catjson();
+            commandchosen = 1;
         default:
             std::cout << "Invalid command! Try again." << std::endl << std::endl;
     }
