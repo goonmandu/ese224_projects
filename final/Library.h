@@ -11,6 +11,7 @@ typedef struct LikesAndReservers {
     std::string title;
     std::list<std::string> reservers;
     int likes;
+    double reserver_days_passed;
 } LikesAndReservers;
 
 typedef struct Book {
@@ -28,7 +29,7 @@ class Library {
         json catjson;
         json resandlikes;
         json credentials;
-        std::vector<LikesAndReservers> internal_rnl;
+        std::vector<LikesAndReservers> internal_lnr;
         int number_of_books;
         int consec_id;
     public:
@@ -53,14 +54,18 @@ class Library {
         std::vector<Book> search_book_author(std::string author);
         void set_loan_duration(int id, int borrow_days);
         Book get_last_book();
-        void rnljson_to_vector();
         void sort_vector_lnr();
         void print_top_books();
         void increment_likes(int id);
         int reserve_book(std::string username, std::string target_title);
-        void print_internal_rnl();
+        void print_internal_lnr();
         void update_catalog_with_catjson();
         void update_catjson_with_catalog();
+        bool borrower_is_first_in_line(long long int isbn, std::string username);
+        int remaining_copies_of_title(std::string title);
+        void update_resandlikes_with_internal_lnr();
+        void update_internal_lnr_with_resandlikes();
+        void save_all_jsons_to_file();
 };
 
 template<typename T> auto stllist_iterator_of(T t);
